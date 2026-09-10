@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NAVISENSE Live Control Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header class="header">
+        <h1>NAVISENSE <span class="sub">AI-ML Dead Reckoning & EKF Sensor Fusion</span></h1>
+        <div id="status-badge" class="badge active">GNSS ACTIVE</div>
+    </header>
+
+    <div class="main-container">
+        <div id="map"></div>
+        
+        <div class="sidebar">
+            <div class="card">
+                <h3>Live Kinematic Telemetry</h3>
+                <p>Speed: <span id="speed">2.5 km/h</span></p>
+                <p>Heading: <span id="heading">38°</span></p>
+                <p>Confidence Score: <span id="confidence">94%</span></p>
+            </div>
+            
+            <div class="card error-box">
+                <h3>Comparative Position Error</h3>
+                <p class="nav-err">Navisense Error: <span id="nav-error">38.58 m</span></p>
+                <p class="cls-err">Classical DR Error: <span id="cls-error">181.98 m</span></p>
+            </div>
+
+            <div class="card controls">
+                <h3>Simulation Controls</h3>
+                <button id="toggle-outage" onclick="toggleOutage()">Simulate GNSS Outage</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
